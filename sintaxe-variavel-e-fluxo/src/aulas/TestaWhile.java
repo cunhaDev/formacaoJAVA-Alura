@@ -1,4 +1,4 @@
-package aula03;
+package aulas;
 
 public class TestaWhile {
 	public static void main(String[] args) {

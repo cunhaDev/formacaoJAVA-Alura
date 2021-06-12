@@ -1,4 +1,4 @@
-package aula03;
+package aulas;
 
 public class TesteLogica {
 	public static void main(String[] args) {

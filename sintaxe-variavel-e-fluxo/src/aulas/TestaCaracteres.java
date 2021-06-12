@@ -11,7 +11,7 @@ public class TestaCaracteres {
 		valor = (char) (valor +1);
 		System.out.println(valor);
 		
-		String palavra = "Formação Java Alura";
+		String palavra = "Formação Java Alura!";
 		System.out.println(palavra);
 		
 		palavra = palavra + " " + 2021;

@@ -19,4 +19,14 @@ public class Conta {
 		System.out.println("Sem saldo");
 		return false;
 	}
+	
+	public boolean transferir(double valor, Conta destino){
+		if(valor <= saldo) {
+			this.saldo -= valor;
+			destino.depositar(valor);
+			System.out.println("Foi transferido " + valor + " reais ");
+			return true;
+		}
+		return false;
+	}
 }

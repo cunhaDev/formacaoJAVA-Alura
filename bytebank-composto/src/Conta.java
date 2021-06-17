@@ -5,6 +5,12 @@ public class Conta {
 	int agencia;
 	int numero;
 	Cliente titular;
+	
+	public Conta(int agencia,int numero) {
+		this.agencia = agencia;
+		this.numero = numero; 
+		System.out.println("contrutor iniciado");
+	}
 
 	void depositar(double valor) {
 		this.saldo += valor;

@@ -9,7 +9,6 @@ public class TelaBanco {
 		Conta contaPaulo = new Conta(002,55556);
 		Conta contaw = new Conta(002,55555);
 		contaPaulo.depositar(200);
-		contaPaulo.titular = paulo;
 		
 	}
 }

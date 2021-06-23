@@ -16,7 +16,8 @@ public class Gerente extends Funcionario{// extends = herança/herdar
 		}
 	}
 
-//	public double getBonificacao() {
-//		return this.salario;
-//	}
+	public double getBonificacao() {// reescrita de metodo: mesma assinatura da classe super
+		return super.salario; // super: referencia que a variavel vem da super classe ou Classe Mae
+							 //Que é a que esta sendo herdada
+	}
 }

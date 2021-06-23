@@ -18,6 +18,20 @@ public class FuncionarioModel {
 		this.situacaoFuncionario = situacaoFuncionario;
 	}
 	
+	public boolean verificaSituacaoFuncionario(int situacaoFuncionario) {
+		if(situacaoFuncionario == 1) {
+			System.out.println("Funcionario Ativo");
+			return true;
+		} else if(situacaoFuncionario == 0){
+			System.out.println("Funcionario Inativo!");
+			return false;
+		} else {
+			System.out.println("Situação Desconhecida!");
+			return false;
+		}
+	}
+	
+	//Getters e Setters
 	public String getName() {
 		return name;
 	}

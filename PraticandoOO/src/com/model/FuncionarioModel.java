@@ -18,6 +18,11 @@ public class FuncionarioModel {
 		this.situacaoFuncionario = situacaoFuncionario;
 	}
 	
+	/**
+	 * metodo que valida se o funcionario esta ou nao ativo
+	 * @param situacaoFuncionario: situação do usuario(Ativo ou não)
+	 * @return dependendo da situação sera imprimido ativo ou inativo
+	 */
 	public boolean verificaSituacaoFuncionario(int situacaoFuncionario) {
 		if(situacaoFuncionario == 1) {
 			System.out.println("Funcionario Ativo");

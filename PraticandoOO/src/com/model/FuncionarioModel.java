@@ -7,6 +7,12 @@ public class FuncionarioModel {
 	private String cargo;
 	private int situacaoFuncionario;
 
+	/**
+	 * Construtor da Classe Funcionario usado para Obrigar que todos tenham Cargo e
+	 * Situação Inicial.
+	 * @param cargo: cargo em que o funcionario atua
+	 * @param situacaoFuncionario: situação do usuario(Ativo ou não).
+	 */
 	public FuncionarioModel(String cargo, int situacaoFuncionario) {
 		this.cargo = cargo;
 		this.situacaoFuncionario = situacaoFuncionario;

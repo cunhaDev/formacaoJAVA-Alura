@@ -1,16 +1,20 @@
 
 public class TesteReferncia {
 	public static void main(String[] args) {
-		//Polimorfismo é poder fazer a mesma coisa de formas diferente
 		Funcionario g1 = new Gerente();
-		Gerente g2 = new Gerente();
+		Funcionario f = new Funcionario();
+		Funcionario ev = new EditorVideo();
 		
 		g1.setNome("Marcos");
-		String nome = g1.getNome();
-		System.out.println(nome);
+		g1.setSalario(5000.0);
+		ev.setSalario(2500.0);
+		f.setSalario(2000.0);
 		
-		g2.setNome("Marcos 2");
-		String nome2 = g2.getNome();
-		System.out.println(nome2);
+		ControleBonificacao controle = new ControleBonificacao();
+		controle.registra(g1);
+		controle.registra(f);
+		controle.registra(ev);
+		
+		System.out.println(controle.getSoma());
 	}
 }

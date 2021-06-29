@@ -1,4 +1,4 @@
-
+//nao pode instansciar esta classe, apenas herdar
 public abstract class Funcionario {
 
 	private String nome;
@@ -6,10 +6,9 @@ public abstract class Funcionario {
 	//protected double salario;// protected deixa publico para os filhos
 	private double salario;
 	
-	public double getBonificacao() {
-		return this.salario  * 0.1;
-	}
-
+	//metodo sem scopo na super apenas nas sub classes
+	public abstract double getBonificacao();
+	
 	public String getNome() {
 		return nome;
 	}

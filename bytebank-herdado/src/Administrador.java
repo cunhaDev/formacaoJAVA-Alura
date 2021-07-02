@@ -1,20 +1,20 @@
 
 public class Administrador extends Funcionario implements Autenticavel {// extends = herança/herdar
 
-	private int senha;
+	private AutendicadorUtil util;
+	
+	public Administrador() {
+		this.util = new AutendicadorUtil();
+	}
 
 	@Override
 	public void setSenha(int senha) {
-		this.senha = senha;
+		this.util.setSenha(senha);
 	}
 
 	@Override
 	public boolean autentica(int senha) {
-		if(this.senha == senha) {
-			return true;
-		} else {
-			return false;
-		}
+		return this.util.autentica(senha);
 	}
 	
 	public double getBonificacao() {// reescrita de metodo: mesma assinatura da classe super

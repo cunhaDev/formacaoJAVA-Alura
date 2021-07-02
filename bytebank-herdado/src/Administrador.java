@@ -1,7 +1,7 @@
 
 public class Administrador extends Funcionario implements Autenticavel {// extends = herança/herdar
 
-	private AutendicadorUtil util;
+	private AutendicadorUtil util;// quando se cria um OBJETO de uma classe em outra é chamado Composição (para reutilizar codigos)
 	
 	public Administrador() {
 		this.util = new AutendicadorUtil();

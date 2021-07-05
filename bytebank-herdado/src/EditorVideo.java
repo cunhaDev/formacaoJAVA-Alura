@@ -1,8 +1,9 @@
+//Gerente eh um Funcionario, Gerente herda da class Funcionario
+public class EditorVideo extends Funcionario {
+	
+	public double getBonificacao() {
+		System.out.println("Chamando o mÃ©todo de bonificacao do Editor de video");
+		return 150;
+	}	
 
-public class EditorVideo extends Funcionario{// extends = herança/herdar
-
-	public double getBonificacao() {// reescrita de metodo: mesma assinatura da classe super
-		return 100; // super: referencia que a variavel ou metodo que vem da super classe ou Classe Mae
-							 //Que é a que esta sendo herdada
-	}
 }

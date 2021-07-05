@@ -1,8 +1,11 @@
-public abstract interface Autenticavel{
-	/**
-	 * em uma interface nao pode ter nada concreto, apenas abstrato 
-	 */
-	public abstract void setSenha(int senha);
+
+//contrato Autenticavel
+	//quem assina esse contrato, precisa implementar
+		//metodo setSenha
+		//metodo autentica
+public abstract interface Autenticavel {
 	
-	public abstract boolean autentica(int senha);
+	public abstract void setSenha(int senha) ;
+	
+	public abstract boolean autentica(int senha) ;
 }

@@ -1,24 +1,25 @@
 
-public class Administrador extends Funcionario implements Autenticavel {// extends = herança/herdar
+public class Administrador extends Funcionario implements Autenticavel{
 
-	private AutendicadorUtil util;// quando se cria um OBJETO de uma classe em outra é chamado Composição (para reutilizar codigos)
-	
+	private AutenticacaoUtil autenticador;
+
 	public Administrador() {
-		this.util = new AutendicadorUtil();
+		this.autenticador = new AutenticacaoUtil();
 	}
-
+	
+	@Override
+	public double getBonificacao() {
+		return 50;
+	}
+	
 	@Override
 	public void setSenha(int senha) {
-		this.util.setSenha(senha);
+		this.autenticador.setSenha(senha);
 	}
 
 	@Override
 	public boolean autentica(int senha) {
-		return this.util.autentica(senha);
+		return this.autenticador.autentica(senha);
 	}
-	
-	public double getBonificacao() {// reescrita de metodo: mesma assinatura da classe super
-		return getSalario(); // super: referencia que a variavel ou metodo que vem da super classe ou Classe Mae
-							 //Que é a que esta sendo herdada
-	}
+
 }

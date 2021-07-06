@@ -1,4 +1,4 @@
-package aula.collectiona.formacaoJava;
+package aula.collectiona.formacaoJava.arrays;
 
 public class ArrayObject {
 	public static void main(String[] args) {

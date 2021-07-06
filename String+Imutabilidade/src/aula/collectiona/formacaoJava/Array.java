@@ -12,7 +12,7 @@ public class Array {
 		}
 		
 		//atribuindo valores as posiçoes do array
-/*		idades[0] = 12;
+		idades[0] = 12;
 		idades[1] = 23;
 		idades[2] = 34;
 		idades[3] = 45;
@@ -31,8 +31,14 @@ public class Array {
 		} catch (Exception e) {
 			System.out.println("Execption -> " + e);
 		}
-*/
 
+		//Array do tipo Object > objeto literal que suporta qualquer coisa
+		Object[] obj = new Object[5];
+		obj[0] = "String";
+		obj[1] = 1324;
+		obj[2] = true;
+		obj[3] = 'c';
+		obj[4] = 15246541687465465L;
 
 	}
 }

@@ -1,4 +1,4 @@
-package aula.collectiona.formacaoJava.arrays;
+package aula.collections.formacaoJava.arrays;
 
 import java.util.Arrays;
 

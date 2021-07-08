@@ -1,5 +1,8 @@
 package br.com.alura;
 
+import java.util.Iterator;
+import java.util.Set;
+
 public class TestaCursoComAluno {
 	public static void main(String[] args) {
 		Curso javaColecoes = new Curso("Dominando Collection Java", "Mateus Cunha");
@@ -27,6 +30,13 @@ public class TestaCursoComAluno {
 		Aluno turini = new Aluno("Rodrigo Turini", 34672);
 		System.out.println("E esse Turini, está matriculado?");
 		System.out.println(javaColecoes.estaMatriculado(turini));
+		
+		Set<Aluno> alunos = javaColecoes.getAlunos();
+		Iterator<Aluno> iterator = alunos.iterator();
+		while(iterator.hasNext()) {
+			Aluno proximo = iterator.next();
+			System.out.println(proximo);
+		}
 		
 		
 	}

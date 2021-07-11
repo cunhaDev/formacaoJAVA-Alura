@@ -11,6 +11,7 @@ public class StreamsIntermediarias {
 		 * limit: limita a coleção a uma certa quantidade
 		 * distinct: nao deixa exibir elementos repetidos, usa equals e hashcode pra fazer a comparação
 		 * filter: filtra algo da lista
+		 * map: transforma os dados (transformação de uma coisa pra outra)
 		 */
 		
 		Set<String> listaDePessoas = new LinkedHashSet<>();

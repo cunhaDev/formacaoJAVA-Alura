@@ -26,5 +26,7 @@ public class ExpressoesLambdas {
 		buttons.addActionListener(e -> {
 			System.out.println("Ola Mundo");
 		});
+		
+		new Thread(() -> System.out.println("nova thread")).run();
 	}
 }

@@ -13,7 +13,7 @@ public class StreamsFinais {
 		 * min: pega o menor valor da stream
 		 * max: pega o maior valor da stream
 		 * collect: guarda o resultado em uma nova variavel
-		 * 
+		 * map: 
 		 */
 		
 		List<Integer> lista = Arrays.asList(1,2,3,4,4,6,5,8,9,9);
@@ -33,5 +33,12 @@ public class StreamsFinais {
 //				.filter(e -> e % 2 == 0)
 //				.collect(Collectors.toList());
 //		System.out.println(novaLista);
+		
+		/**
+		 * Collectors:
+		 * -> toList, cria uma nova lista com o resultado final
+		 * -> groupingBy, agrupa e cria uma lista com o resultado agrupado
+		 * -> joining, agrupa Strings, junção de todos as string em uma unica string
+		 */
 	}
 }

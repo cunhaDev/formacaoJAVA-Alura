@@ -13,7 +13,6 @@ public class StreamsFinais {
 		 * min: pega o menor valor da stream
 		 * max: pega o maior valor da stream
 		 * collect: guarda o resultado em uma nova variavel
-		 * map: 
 		 */
 		
 		List<Integer> lista = Arrays.asList(1,2,3,4,4,6,5,8,9,9);

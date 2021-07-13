@@ -3,7 +3,7 @@ package com.dto;
 
 public class ProdutoDTO {
     
-    private Long id;
+    private int id;
     private String nome;
     private String descricao;
 
@@ -23,11 +23,11 @@ public class ProdutoDTO {
         this.descricao = descricao;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
     

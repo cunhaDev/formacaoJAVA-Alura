@@ -44,6 +44,12 @@ public class frmProduto extends javax.swing.JFrame {
         btnCadastrar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaProduto = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        txtId = new javax.swing.JTextField();
+        btnLimparCampos = new javax.swing.JButton();
+        btnCarregarCampos1 = new javax.swing.JButton();
+        btnAlterarProduto = new javax.swing.JButton();
+        btnExcluirProduto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,7 +72,7 @@ public class frmProduto extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3"
+                "ID", "NOME", "DESCRIÇÃO"
             }
         ));
         jScrollPane1.setViewportView(tabelaProduto);
@@ -76,73 +82,149 @@ public class frmProduto extends javax.swing.JFrame {
             tabelaProduto.getColumnModel().getColumn(2).setHeaderValue("Title 3");
         }
 
+        jLabel3.setText("Id");
+
+        txtId.setEnabled(false);
+
+        btnLimparCampos.setText("LIMPAR CAMPOS");
+        btnLimparCampos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparCamposActionPerformed(evt);
+            }
+        });
+
+        btnCarregarCampos1.setText("CARREGAR CAMPOS");
+        btnCarregarCampos1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarregarCampos1ActionPerformed(evt);
+            }
+        });
+
+        btnAlterarProduto.setText("ALTERAR PRODUTO");
+        btnAlterarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarProdutoActionPerformed(evt);
+            }
+        });
+
+        btnExcluirProduto.setText("EXCLUIR PRODUTO");
+        btnExcluirProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirProdutoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(txtDescicao, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(175, 175, 175)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(172, 172, 172)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addComponent(btnCadastrar)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnCadastrar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(txtDescicao, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(36, 36, 36))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(219, 219, 219)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnAlterarProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                                    .addComponent(btnExcluirProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(21, 21, 21)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(btnCarregarCampos1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnLimparCampos)
+                .addGap(100, 100, 100))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtDescicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnAlterarProduto)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(btnExcluirProduto))
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtDescicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnCadastrar)
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLimparCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCarregarCampos1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        ProdutoDTO produtoDTO = new ProdutoDTO();
-        ProdutoDAO produtoDAO = new ProdutoDAO();
-        String nome, descricao;
-        nome = txtNome.getText();
-        descricao = txtDescicao.getText();
+        cadastrarProduto();
+        listarProdutos();
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
-        produtoDTO.setNome(nome);
-        produtoDTO.setDescricao(descricao);
+    private void btnLimparCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparCamposActionPerformed
+        limparCampos();
+    }//GEN-LAST:event_btnLimparCamposActionPerformed
 
+    private void btnCarregarCampos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarregarCampos1ActionPerformed
+        carregarCampos();
+    }//GEN-LAST:event_btnCarregarCampos1ActionPerformed
+
+    private void btnAlterarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarProdutoActionPerformed
         try {
-            produtoDAO.cadastrarProduto(produtoDTO);
+            alterarProduto();
             listarProdutos();
         } catch (SQLException ex) {
             Logger.getLogger(frmProduto.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnAlterarProdutoActionPerformed
+
+    private void btnExcluirProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirProdutoActionPerformed
+        try {
+            excluirProduto();
+            limparCampos();
+            listarProdutos();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(frmProduto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(frmProduto.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_btnCadastrarActionPerformed
+    }//GEN-LAST:event_btnExcluirProdutoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,12 +262,18 @@ public class frmProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAlterarProduto;
     private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnCarregarCampos1;
+    private javax.swing.JButton btnExcluirProduto;
+    private javax.swing.JButton btnLimparCampos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabelaProduto;
     private javax.swing.JTextField txtDescicao;
+    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 
@@ -211,4 +299,68 @@ public class frmProduto extends javax.swing.JFrame {
         }
     }
 
+    private void cadastrarProduto() {
+        ProdutoDTO produtoDTO = new ProdutoDTO();
+        ProdutoDAO produtoDAO = new ProdutoDAO();
+        String nome, descricao;
+        nome = txtNome.getText();
+        descricao = txtDescicao.getText();
+
+        produtoDTO.setNome(nome);
+        produtoDTO.setDescricao(descricao);
+
+        try {
+            produtoDAO.cadastrarProduto(produtoDTO);
+        } catch (SQLException ex) {
+            Logger.getLogger(frmProduto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(frmProduto.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void carregarCampos() {
+        int setar = tabelaProduto.getSelectedRow();
+        txtId.setText(tabelaProduto.getModel().getValueAt(setar, 0).toString());
+        txtNome.setText(tabelaProduto.getModel().getValueAt(setar, 1).toString());
+        txtDescicao.setText(tabelaProduto.getModel().getValueAt(setar, 2).toString());
+    }
+
+    private void limparCampos() {
+        txtDescicao.setText("");
+        txtNome.setText("");
+        txtId.setText("");
+        txtNome.requestFocus();
+    }
+
+    private void alterarProduto() throws SQLException {
+        int id;
+        String nome, descricao;
+
+        ProdutoDTO produtoDTO = new ProdutoDTO();
+        id = Integer.parseInt(txtId.getText());
+        nome = txtNome.getText();
+        descricao = txtDescicao.getText();
+
+        produtoDTO.setId(id);
+        produtoDTO.setNome(nome);
+        produtoDTO.setDescricao(descricao);
+
+        ProdutoDAO produtoDAO = new ProdutoDAO();
+        try {
+            produtoDAO.alterarProduto(produtoDTO);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(frmProduto.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void excluirProduto() throws ClassNotFoundException, SQLException {
+        int id;
+        id = Integer.parseInt(txtId.getText());
+
+        ProdutoDTO produtoDTO = new ProdutoDTO();
+        produtoDTO.setId(id);
+
+        ProdutoDAO produtoDAO = new ProdutoDAO();
+        produtoDAO.excluirProduto(produtoDTO);
+    }
 }

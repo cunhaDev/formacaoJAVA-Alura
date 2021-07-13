@@ -18,6 +18,11 @@ public class IterandoListas {
 		for(String objetos : arrayString) {
 			System.out.println(objetos);
 		}
+		
+	int	A = 1;
+	int	B = 1;
+		int result = (A + B) * A / B;
+		System.out.println(result);
 	}
 
 }

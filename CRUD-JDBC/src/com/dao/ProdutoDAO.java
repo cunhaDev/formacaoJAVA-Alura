@@ -71,7 +71,7 @@ public class ProdutoDAO {
     public void excluirProduto(ProdutoDTO produto) throws ClassNotFoundException, SQLException{
         conexao = new ConexaoDAO().getConnection();
         try {
-            String SQL = "DELETE from produto WHERE id = ?";
+            String SQL = "DELETE FROM produto WHERE id=?";
             PreparedStatement pstmt = conexao.prepareStatement(SQL);
             pstmt.setInt(1, produto.getId());
             

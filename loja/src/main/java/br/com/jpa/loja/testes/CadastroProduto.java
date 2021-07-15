@@ -20,6 +20,16 @@ public class CadastroProduto {
 		ListandoProdutos();
 		
 		buscandoPorNome();
+		
+		buscarPrecoProdutoPorNome();
+	}
+
+	private static void buscarPrecoProdutoPorNome() {
+		EntityManager manager = JpaUtil.getEntityManager();
+		ProdutoDAO produtoDAO = new ProdutoDAO(manager);
+		
+		BigDecimal precoProduto = produtoDAO.buscarPrecoProdutoPorNome("Samsumg A10");
+		System.out.println(precoProduto);
 	}
 
 	private static void buscandoPorNome() {

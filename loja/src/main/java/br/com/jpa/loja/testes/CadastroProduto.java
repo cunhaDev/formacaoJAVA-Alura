@@ -3,9 +3,8 @@ package br.com.jpa.loja.testes;
 import java.math.BigDecimal;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
+import br.com.jpa.loja.modelo.Categoria;
 import br.com.jpa.loja.modelo.Produto;
 import br.com.jpa.loja.util.JpaUtil;
 import br.com.jpa.lojaDAO.ProdutoDAO;
@@ -17,10 +16,7 @@ public class CadastroProduto {
 		
 		ProdutoDAO produtoDAO = new ProdutoDAO(manager);
 
-		Produto celular = new Produto();
-		celular.setNome("Samsumg A10");
-		celular.setDescricao("Ultima geração");
-		celular.setPreco(new BigDecimal(800));
+		Produto celular = new Produto("Samsumg A10", "Samsumg A10", new BigDecimal(800), Categoria.CELULARES);
 		
 		manager.getTransaction().begin();
 		produtoDAO.Cadastrar(celular);

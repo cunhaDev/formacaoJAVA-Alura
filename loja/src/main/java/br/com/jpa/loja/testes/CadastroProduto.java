@@ -7,12 +7,15 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import br.com.jpa.loja.modelo.Produto;
+import br.com.jpa.loja.util.JpaUtil;
+import br.com.jpa.lojaDAO.ProdutoDAO;
 
 public class CadastroProduto {
 	public static void main(String[] args) {
 		
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("loja");
-		EntityManager manager = factory.createEntityManager();
+		EntityManager manager = JpaUtil.getEntityManager();
+		
+		ProdutoDAO produtoDAO = new ProdutoDAO(manager);
 
 		Produto celular = new Produto();
 		celular.setNome("Samsumg A10");
@@ -20,7 +23,7 @@ public class CadastroProduto {
 		celular.setPreco(new BigDecimal(800));
 		
 		manager.getTransaction().begin();
-		manager.persist(celular);
+		produtoDAO.Cadastrar(celular);
 		manager.getTransaction().commit();
 		manager.close();
 		

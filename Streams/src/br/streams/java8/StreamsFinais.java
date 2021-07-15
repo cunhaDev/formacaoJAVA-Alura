@@ -28,10 +28,10 @@ public class StreamsFinais {
 //		Optional<Integer> a = lista.stream().max(Comparator.naturalOrder());pega o valor miximo
 //		System.out.println(a.get());
 		
-//		List<Integer> novaLista =  lista.stream() cria uma nova lista com o resultado final
-//				.filter(e -> e % 2 == 0)
-//				.collect(Collectors.toList());
-//		System.out.println(novaLista);
+		List<Integer> novaLista =  lista.stream() //cria uma nova lista com o resultado final
+				.filter(e -> e % 2 == 0)
+				.collect(Collectors.toList());
+		System.out.println(novaLista);
 		
 		/**
 		 * Collectors:

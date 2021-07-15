@@ -35,5 +35,12 @@ public class ProdutoDAO {
 		String JPQL = "SELECT p FROM Produto p";
 		return entityManager.createQuery(JPQL, Produto.class).getResultList();
 	}
+	
+	public List<Produto> buscarPorNome(String nome){
+		String JPQL = "SELECT p FROM Produto p 	WHERE p.nome = :nome";
+		return entityManager.createQuery(JPQL, Produto.class)
+				.setParameter("nome", nome)
+				.getResultList();
+	}
 
 }

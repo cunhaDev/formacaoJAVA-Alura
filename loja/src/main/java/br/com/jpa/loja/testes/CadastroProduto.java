@@ -18,6 +18,17 @@ public class CadastroProduto {
 		BuscandoPorId();
 		
 		ListandoProdutos();
+		
+		buscandoPorNome();
+	}
+
+	private static void buscandoPorNome() {
+		EntityManager manager = JpaUtil.getEntityManager();
+		ProdutoDAO produtoDAO = new ProdutoDAO(manager);
+		List<Produto> buscandoPorNome = produtoDAO.buscarPorNome("Samsumg A10");
+		buscandoPorNome.stream().forEach(produto -> {
+			System.out.println(produto.getNome());
+		});
 	}
 
 	private static void ListandoProdutos() {
